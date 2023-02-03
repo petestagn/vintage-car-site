@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+header {
+  height: 100vh;
+  background-image: url("images/city-scape.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  background-attachment: fixed;
+}
+header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  top: 0;
+  width: 100%;
+  background-color: rgb(24, 24, 25);
+  position: fixed;
+  z-index: 5;
+}
+header nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+  margin-left: auto;
+}
+header nav ul li {
+  list-style: none;
+  padding: 0.1rem 0.5rem;
+  border-radius: 10px;
+}
+header nav ul li a {
+  text-decoration: none;
+  color: #FDF6F0;
+  text-transform: uppercase;
+  transition: color 300ms ease-in-out;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+header nav ul li a:hover {
+  color: #784010;
+}
+header nav ul li.active {
+  border: 1.5px solid #784010;
+}
+header nav ul li:active {
+  border: 1.5px solid #FDF6F0;
+}
+header nav .login {
+  width: 5%;
+  margin: auto;
+}
+header nav .login a {
+  text-decoration: none;
+  color: #FDF6F0;
+  text-transform: capitalize;
+  transition: color 300ms ease-in-out;
+  cursor: pointer;
+}
+header nav .login a:hover {
+  color: #784010;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  pointer-events: none;
+  text-transform: uppercase;
+}
+.overlay h1,
+.overlay p {
+  color: #FDF6F0;
+  text-shadow: 2px 2px 2px rgb(24, 24, 25);
+  border-radius: 10px;
+  background-color: rgba(24, 24, 25, 0.5);
+}
+.overlay h1 {
+  font-size: 4rem;
+}
+.overlay p {
+  font-size: 1.6rem;
+}
+
+.services {
+  min-height: 90vh;
+  width: 100%;
+  background-image: url("images/dark-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: stretch;
+  color: #FDF6F0;
+}
+.services .services-overlay {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+.services .services-overlay h1 {
+  padding-top: 10%;
+  text-transform: uppercase;
+  margin-top: auto;
+  font-size: 2rem;
+}
+.services .services-overlay .service-desc {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  height: 50%;
+  margin: auto;
+}
+.services .services-overlay .service-desc .sect {
+  height: 100%;
+  flex: 1 100%;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+.services .services-overlay .service-desc .sect h4 {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+}
+.services .services-overlay .service-desc .sect p {
+  text-transform: capitalize;
+  font-weight: 700;
+}
+.services .services-overlay .service-desc .circle {
+  width: 130px;
+  aspect-ratio: 1/1;
+  margin: 0 auto;
+  border: 3px solid #FDF6F0;
+  border-radius: 50%;
+}
+
+.the-work .work-header {
+  min-height: 27vh;
+  display: grid;
+  place-content: center center;
+  text-align: center;
+}
+.the-work .work-header h1 {
+  font-size: 2rem;
+  text-transform: uppercase;
+}/*# sourceMappingURL=vcar.css.map */

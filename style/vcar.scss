@@ -1,0 +1,231 @@
+$bg-clr: rgb(24, 24, 25);
+$primary-clr: #FDF6F0;
+$font: 'Lato', sans-serif;
+$font-wght: 700;
+$font-lt-wght: 400;
+$trans-duration: 300ms;
+
+
+// --------mixins----------
+
+
+@mixin flex($justify-content: center, $align-items: center) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin bg-img-center($background-size: cover, $background-position: center) {
+    background-size: $background-size;
+    background-position: $background-position;
+    background-repeat: no-repeat;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font: {
+        family: $font;
+        size: 16px;
+    }
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+// -----------landing pg-----------
+
+
+// .p-wrapper {
+//     height: 100%;
+//     perspective: 10px;
+//     overflow-y: auto;
+// }
+
+
+header {
+    height: 100vh;
+    background-image: url("images/city-scape.jpg");
+    @include bg-img-center;
+    position: relative;
+    background-attachment: fixed;
+    
+
+    nav {
+        @include flex;
+        height: 10vh;
+        top: 0;
+        width: 100%;
+        background-color: $bg-clr;
+        position: fixed;
+        z-index: 5;
+
+        ul {
+            @include flex(space-around);
+            width: 70%;
+            margin-left: auto;
+
+            li {
+                list-style: none;
+                padding: .1rem .5rem;
+                border-radius: 10px;
+
+                a {
+                    text-decoration: none;
+                    color: $primary-clr;
+                    text-transform: uppercase;
+                    transition: color $trans-duration ease-in-out;
+                    cursor: pointer;
+                    
+                    font: {
+                        weight: $font-lt-wght;
+                        size: .9rem;
+                }
+                &:hover {
+                    color: darken($primary-clr, 70%);
+                }
+              
+            }
+            &.active {
+                border: 1.5px solid darken($primary-clr, 70%);
+            }
+            &:active {
+                border: 1.5px solid $primary-clr;
+            }
+        }
+    }
+        .login {
+            width: 5%;
+            margin: auto;
+
+            a {
+                text-decoration: none;
+                color: $primary-clr;
+                text-transform: capitalize;
+                transition: color $trans-duration ease-in-out;
+                cursor: pointer;
+
+                &:hover {
+                    color: darken($primary-clr, 70%);
+                }
+            }
+        }
+    }
+}
+.overlay {
+    position: absolute;
+    inset: 0;
+    @include flex;
+    flex-direction: column;
+    pointer-events: none;
+    text-transform: uppercase;
+
+    h1,
+    p {
+        color: $primary-clr;
+        text-shadow: 2px 2px 2px $bg-clr;
+        border-radius: 10px;
+        background-color: rgba(24, 24, 25, .5);
+    }
+    h1 {
+        font-size: 4rem;
+    }
+    p {
+        font-size: 1.6rem;
+    }
+}
+
+
+
+
+// -------------services section-----------
+
+
+
+.services {
+    min-height: 90vh;
+    width: 100%;
+    background-image: url("images/dark-bg.jpg");
+    @include bg-img-center;
+    @include flex;
+    align-items: stretch;
+    color: $primary-clr;
+    // transform: translateZ(-10px) scale(1);
+    // transform-style: preserve-3d;
+
+    .services-overlay {
+        width: 100%;
+        min-height: 100%;
+        @include flex(space-around);
+        flex-direction: column;
+        // perspective: 10px;
+        // overflow-y: auto;
+
+        h1 {
+            padding-top: 10%;
+            text-transform: uppercase;
+            margin-top: auto;
+            font-size: 2rem;
+        }
+
+    .service-desc {
+        @include flex(space-around);
+        width: 80%;
+        height: 50%;
+        margin: auto;
+
+        .sect {
+            height: 100%;
+            flex: 1 100%;
+            text-align: center;
+            @include flex(space-evenly);
+            flex-direction: column;
+
+            h4 {
+                text-transform: uppercase;
+                font-size: 1.3rem;
+            }
+            p {
+                text-transform: capitalize;
+                font-weight: 700;
+            }
+        }
+
+        .circle {
+            width: 130px;
+            aspect-ratio: 1/1;
+            margin: 0 auto;
+            border: 3px solid $primary-clr;
+            border-radius: 50%;
+        }
+        }
+    }
+}
+
+
+// ---------the work-------------
+
+
+.the-work {
+
+    .work-header {
+        min-height: 27vh;
+        display: grid;
+        place-content: center center;
+        text-align: center;
+
+        h1 {
+            font-size: 2rem;
+            text-transform: uppercase;
+        }
+    }
+}
