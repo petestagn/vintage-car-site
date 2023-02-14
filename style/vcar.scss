@@ -29,35 +29,34 @@ $trans-duration: 300ms;
     box-sizing: border-box;
 }
 
-html {
+html,
+body {
     font: {
         family: $font;
         size: 16px;
     }
 }
 
-body {
-    width: 100%;
-    min-height: 100vh;
-}
-
 
 // -----------landing pg-----------
 
 
-// .p-wrapper {
-//     height: 100%;
-//     perspective: 10px;
-//     overflow-y: auto;
-// }
+.p-wrapper {
+    width: 100vw;
+    height: 100vh;
+    perspective: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
 
 
 header {
     height: 100vh;
-    background-image: url("images/city-scape.jpg");
+    background-image: url("../style/recourses/images/city-scape.jpg");
     @include bg-img-center;
     position: relative;
     background-attachment: fixed;
+    z-index: 1;
     
 
     nav {
@@ -128,6 +127,7 @@ header {
     flex-direction: column;
     pointer-events: none;
     text-transform: uppercase;
+    z-index: 2;
 
     h1,
     p {
@@ -152,26 +152,33 @@ header {
 
 
 .services {
-    min-height: 90vh;
+    min-height: 100vh;
     width: 100%;
-    background-image: url("images/dark-bg.jpg");
-    @include bg-img-center;
+    position: relative;
     @include flex;
     align-items: stretch;
     color: $primary-clr;
-    // transform: translateZ(-10px) scale(1);
-    // transform-style: preserve-3d;
+    // overflow-y: hidden;
+    transform-style: preserve-3d;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("../style/recourses/images/dark-bg.jpg");
+        @include bg-img-center;
+        z-index: -2;
+        transform: translateZ(-5px) scale(1.5);
+    }
 
     .services-overlay {
         width: 100%;
         min-height: 100%;
         @include flex(space-around);
         flex-direction: column;
-        // perspective: 10px;
-        // overflow-y: auto;
 
         h1 {
-            padding-top: 10%;
+            // padding-top: 10%;
             text-transform: uppercase;
             margin-top: auto;
             font-size: 2rem;
@@ -216,16 +223,121 @@ header {
 
 
 .the-work {
+    position: relative;
+    z-index: 1;
+    background-color: $primary-clr;
+    padding: 0 2.3% 6.4%;
 
     .work-header {
-        min-height: 27vh;
+        min-height: 30vh;
         display: grid;
         place-content: center center;
         text-align: center;
 
         h1 {
-            font-size: 2rem;
             text-transform: uppercase;
+            padding-bottom: 1rem;
+
+            font: {
+                size: 2.1rem;
+                weight: 500;
+            }
         }
+        .underline {
+            width: 20px;
+            height: 3px;
+            background-color: $bg-clr;
+            margin: 0 auto;
+            margin-bottom: 1rem;
+        }
+        > p {
+            font-size: 1.1rem;
+        }
+    }
+    .img-container {
+        @include flex(space-around);
+        flex-wrap: wrap;
+
+        .img-1 {
+            background-image: url("/style/recourses/images/brn-bg.jpg");
+        }
+        .img-2 {
+            background-image: url("/style/recourses/images/city-scape.jpg");
+        }
+        .img-3 {
+            background-image: url("/style/recourses/images/dark-bg.jpg");
+        }
+        .img-4 {
+            background-image: url("/style/recourses/images/dark-leaves.jpg");
+        }
+        .img-5 {
+            background-image: url("/style/recourses/images/dark-railroad.jpg");
+        }
+        .img-6 {
+            background-image: url("/style/recourses/images/brn-bg.jpg");
+        }
+    }
+    .img-wrap {
+        @include bg-img-center;
+        flex: 1 max(30%, 250px);
+        aspect-ratio: 16/12;
+
+        .img-overlay {
+            width: 100%;
+            height: 100%;
+            @include flex;
+            flex-direction: column;
+            text-align: center;
+            padding: 10%;
+            gap: 1rem;
+            color: $primary-clr;
+            background-color: $bg-clr;
+            mix-blend-mode: screen;
+            opacity: 0;
+            transition: opacity $trans-duration ease-in-out;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            h4 {
+                font: {
+                    size: 1.4rem;
+                    weight: 500;
+                }
+            }
+            p {
+                line-height: 1.5rem;
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+.about {
+    height: 100vh;
+    @include flex;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("../style/recourses/images/dark-bg.jpg");
+        @include bg-img-center;
+        z-index: -1;
+    }
+
+    .about-desc {
+        flex-basis: max(55%, 400px);
+        height: 60%;
+        background-color: $primary-clr;
+        color: $bg-clr;
+        text-align: center;
+        @include flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 0 10%;
+        border: 2px solid black;
     }
 }
