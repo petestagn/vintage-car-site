@@ -1,3 +1,23 @@
+.email-p-sec .info-sect .underline, .about .about-desc .underline, .email-p-sec .about-desc .underline, .the-work .work-header .underline {
+  width: 20px;
+  height: 3px;
+  background-color: rgb(24, 24, 25);
+  margin: 0 auto;
+  margin-bottom: 1rem;
+}
+
+.about::before, .email-p-sec::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../style/recourses/images/dark-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  background-attachment: fixed;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -108,6 +128,10 @@ header nav .login a:hover {
 .overlay p {
   font-size: 1.6rem;
 }
+.overlay .social-media {
+  justify-self: end;
+  padding: 2rem;
+}
 
 .services {
   min-height: 100vh;
@@ -195,15 +219,8 @@ header nav .login a:hover {
   font-size: 2.1rem;
   font-weight: 500;
 }
-.the-work .work-header .underline {
-  width: 20px;
-  height: 3px;
-  background-color: rgb(24, 24, 25);
-  margin: 0 auto;
-  margin-bottom: 1rem;
-}
 .the-work .work-header > p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 .the-work .img-container {
   display: flex;
@@ -265,24 +282,14 @@ header nav .login a:hover {
   font-size: 1.2rem;
 }
 
-.about {
+.about, .email-p-sec {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
 }
-.about::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("../style/recourses/images/dark-bg.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -1;
-}
-.about .about-desc {
+.about .about-desc, .email-p-sec .about-desc {
   flex-basis: max(55%, 400px);
   height: 60%;
   background-color: #FDF6F0;
@@ -294,5 +301,66 @@ header nav .login a:hover {
   flex-direction: column;
   gap: 1.5rem;
   padding: 0 10%;
-  border: 2px solid black;
+}
+.about .about-desc h1, .email-p-sec .about-desc h1 {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 2.1rem;
+}
+.about .about-desc p, .email-p-sec .about-desc p {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+}
+
+.mid-p-sec {
+  height: 80vh;
+  background-image: url("../style/recourses/images/city-scape.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.email-p-sec .info-sect {
+  background-color: #FDF6F0;
+  color: rgb(24, 24, 25);
+  min-height: 75vh;
+  padding: 2% 5%;
+}
+.email-p-sec .info-sect h1 {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 500;
+  font-size: 2.1rem;
+}
+.email-p-sec .info-sect .info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 80%;
+  background-color: burlywood;
+}
+.email-p-sec .info-sect .info .contact {
+  height: 100%;
+  background-color: chartreuse;
+}
+.email-p-sec .info-sect .info form {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  background-color: cornflowerblue;
+}
+
+footer {
+  height: 25vh;
+  background-color: rgb(24, 24, 25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+footer p {
+  color: #FDF6F0;
 }/*# sourceMappingURL=vcar.css.map */

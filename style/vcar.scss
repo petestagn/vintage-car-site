@@ -1,7 +1,10 @@
 $bg-clr: rgb(24, 24, 25);
 $primary-clr: #FDF6F0;
 $font: 'Lato', sans-serif;
+$header-fnt-sz: 2.1rem;
+$header-fnt-wght: 500;
 $font-wght: 700;
+$main-fnt-sz: 1.2rem;
 $font-lt-wght: 400;
 $trans-duration: 300ms;
 
@@ -19,6 +22,24 @@ $trans-duration: 300ms;
     background-size: $background-size;
     background-position: $background-position;
     background-repeat: no-repeat;
+}
+
+%line {
+    width: 20px;
+    height: 3px;
+    background-color: $bg-clr;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+}
+
+%before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../style/recourses/images/dark-bg.jpg");
+    @include bg-img-center;
+    z-index: -1;
+    background-attachment: fixed;
 }
 
 
@@ -142,6 +163,10 @@ header {
     p {
         font-size: 1.6rem;
     }
+    .social-media {
+        justify-self: end;
+        padding: 2rem;
+    }
 }
 
 
@@ -239,19 +264,15 @@ header {
             padding-bottom: 1rem;
 
             font: {
-                size: 2.1rem;
-                weight: 500;
+                size: $header-fnt-sz;
+                weight: $header-fnt-wght;
             }
         }
         .underline {
-            width: 20px;
-            height: 3px;
-            background-color: $bg-clr;
-            margin: 0 auto;
-            margin-bottom: 1rem;
+            @extend %line
         }
         > p {
-            font-size: 1.1rem;
+            font-size: $main-fnt-sz;
         }
     }
     .img-container {
@@ -309,23 +330,30 @@ header {
             }
             p {
                 line-height: 1.5rem;
-                font-size: 1.2rem;
+                font-size: $main-fnt-sz;
             }
         }
     }
 }
+
+
+// ------------abut sect------------
+
+
 .about {
     height: 100vh;
     @include flex;
     position: relative;
 
     &::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background-image: url("../style/recourses/images/dark-bg.jpg");
-        @include bg-img-center;
-        z-index: -1;
+        @extend %before;
+        // content: "";
+        // position: absolute;
+        // inset: 0;
+        // background-image: url("../style/recourses/images/dark-bg.jpg");
+        // @include bg-img-center;
+        // z-index: -1;
+        // background-attachment: fixed;
     }
 
     .about-desc {
@@ -338,6 +366,91 @@ header {
         flex-direction: column;
         gap: 1.5rem;
         padding: 0 10%;
-        border: 2px solid black;
+
+        h1 {
+            text-transform: uppercase;
+
+            font: {
+                weight: $header-fnt-wght;
+                size: $header-fnt-sz;
+            }
+        }
+        .underline {
+            @extend %line;
+        }
+        p {
+            font-size: $main-fnt-sz;
+            line-height: 1.5rem;
+        }
     }
 }
+
+// ------------mid parallax-----------
+
+.mid-p-sec {
+    height: 80vh;
+    background-image: url("../style/recourses/images/city-scape.jpg");
+    @include bg-img-center;
+    background-attachment: fixed;
+}
+
+
+
+// -----------registration sect-----------
+
+
+.email-p-sec {
+    @extend .about;
+
+    .info-sect {
+        background-color: $primary-clr;
+        color: $bg-clr;
+        min-height: 75vh;
+        padding: 2% 5%;
+
+        h1 {
+            text-transform: uppercase;
+            text-align: center;
+
+            font: {
+                weight: $header-fnt-wght;
+                size: $header-fnt-sz;
+            }
+        }
+        .underline {
+            @extend %line;
+        }
+        .info {
+            @include flex(space-around);
+            height: 80%;
+            background-color: burlywood;
+
+            .contact {
+                height: 100%;
+                background-color: chartreuse;
+            }
+            form {
+                @include flex(space-around);
+                flex-direction: column;
+                height: 100%;
+                background-color: cornflowerblue;
+            }
+        }
+    }
+}
+
+// ------------footer--------------
+
+
+footer {
+    height: 25vh;
+    background-color: $bg-clr;
+    @include flex;
+    flex-direction: column;
+
+    p {
+        color: $primary-clr;
+    }
+}
+
+
