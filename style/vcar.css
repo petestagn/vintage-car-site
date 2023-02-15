@@ -132,6 +132,10 @@ header nav .login a:hover {
   justify-self: end;
   padding: 2rem;
 }
+.overlay .social-media img {
+  margin: 0 1rem;
+  cursor: pointer;
+}
 
 .services {
   min-height: 100vh;
@@ -324,33 +328,58 @@ header nav .login a:hover {
 .email-p-sec .info-sect {
   background-color: #FDF6F0;
   color: rgb(24, 24, 25);
-  min-height: 75vh;
-  padding: 2% 5%;
+  height: 85%;
+  width: 50%;
+  padding: 2%;
 }
 .email-p-sec .info-sect h1 {
   text-transform: uppercase;
   text-align: center;
+  padding-bottom: 1.5rem;
   font-weight: 500;
   font-size: 2.1rem;
 }
+.email-p-sec .info-sect .underline {
+  margin-bottom: 1.5rem;
+}
 .email-p-sec .info-sect .info {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  height: 80%;
-  background-color: burlywood;
+  height: 70%;
+  width: 100%;
+  gap: 0.4rem;
 }
 .email-p-sec .info-sect .info .contact {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 45%;
   height: 100%;
-  background-color: chartreuse;
 }
 .email-p-sec .info-sect .info form {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: space-evenly;
+  align-items: flex-start;
   flex-direction: column;
   height: 100%;
-  background-color: cornflowerblue;
+  width: 45%;
+}
+.email-p-sec .info-sect .info form label {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+.email-p-sec .info-sect .info form textarea {
+  padding: 0.8rem;
+}
+.email-p-sec .info-sect .info form input {
+  height: 1.7rem;
+  width: 95%;
+  cursor: pointer;
+}
+.email-p-sec .info-sect .info form input[type=submit] {
+  text-transform: capitalize;
 }
 
 footer {
@@ -360,6 +389,10 @@ footer {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+footer .social-media img {
+  margin: 0 1rem 1rem;
+  cursor: pointer;
 }
 footer p {
   color: #FDF6F0;
