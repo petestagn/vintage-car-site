@@ -318,7 +318,6 @@ header {
             gap: 1rem;
             color: $primary-clr;
             background-color: $bg-clr;
-            mix-blend-mode: screen;
             opacity: 0;
             transition: opacity $trans-duration ease-in-out;
             cursor: pointer;

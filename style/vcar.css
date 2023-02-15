@@ -269,7 +269,6 @@ header nav .login a:hover {
   gap: 1rem;
   color: #FDF6F0;
   background-color: rgb(24, 24, 25);
-  mix-blend-mode: screen;
   opacity: 0;
   transition: opacity 300ms ease-in-out;
   cursor: pointer;
