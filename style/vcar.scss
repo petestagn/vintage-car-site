@@ -198,7 +198,8 @@ header {
         background-image: url("../style/recourses/images/dark-bg.jpg");
         @include bg-img-center;
         z-index: -2;
-        transform: translateZ(-5px) scale(1.5);
+        // transform: translateZ(-5px) scale(1.5);
+        background-attachment: fixed;
     }
 
     .services-overlay {
@@ -208,7 +209,6 @@ header {
         flex-direction: column;
 
         h1 {
-            // padding-top: 10%;
             text-transform: uppercase;
             margin-top: auto;
             font-size: 2rem;
@@ -351,13 +351,6 @@ header {
 
     &::before {
         @extend %before;
-        // content: "";
-        // position: absolute;
-        // inset: 0;
-        // background-image: url("../style/recourses/images/dark-bg.jpg");
-        // @include bg-img-center;
-        // z-index: -1;
-        // background-attachment: fixed;
     }
 
     .about-desc {

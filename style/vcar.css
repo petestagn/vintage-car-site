@@ -157,7 +157,7 @@ header nav .login a:hover {
   background-position: center;
   background-repeat: no-repeat;
   z-index: -2;
-  transform: translateZ(-5px) scale(1.5);
+  background-attachment: fixed;
 }
 .services .services-overlay {
   width: 100%;
